@@ -2,6 +2,8 @@
 
 Quick and dirty, so :ear: can learn to code.
 
+Project based on [fastapi-realworld-example-app](https://github.com/nsidnev/fastapi-realworld-example-app).
+
 ---
 
 # Working with this project
