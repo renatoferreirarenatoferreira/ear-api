@@ -35,3 +35,7 @@ Use Poetry to install the dependencies:
 Start Uvicorn:
 
 `uvicorn app.main:app --reload`
+
+## Visual Studio Code integration
+
+When the environment is properly configured, this project must run from *Run / Start Debugging* or by pressing *F5* key.
