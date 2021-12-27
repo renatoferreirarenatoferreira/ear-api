@@ -28,8 +28,8 @@ Use Poetry to install the dependencies:
 
 `poetry install`
 
-## Run the project
+## Running the project
 
-Start uvicorn:
+Start Uvicorn:
 
 `uvicorn app.main:app --reload`
