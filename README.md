@@ -16,6 +16,10 @@ Download it from https://www.python.org/ and install.
 
 **It requires version 3.10!**
 
+Make sure that all the required modules is installed using the following *pip* syntax:"
+
+`pip install cleo tomlkit poetry.core requests cachecontrol cachy html5lib pkginfo virtualenv lockfile pexpect shellingham`
+
 2. Install Poetry
 
 Make sure that Python installation directory is in your system path.
