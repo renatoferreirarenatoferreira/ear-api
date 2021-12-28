@@ -30,6 +30,10 @@ Run the following script using PowerShell:
 
 3. Install dependencies
 
+Configure Poetry to create the virtual environment inside the project directory. It will make easier to work with VSCode:
+
+`poetry config virtualenvs.in-project true`
+
 Use Poetry to install the dependencies:
 
 `poetry install`
