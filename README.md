@@ -40,6 +40,10 @@ Use Poetry to install the dependencies:
 
 ## Running the project
 
+Enter the Poetry shell:
+
+`poetry shell`
+
 Start Uvicorn:
 
 `uvicorn app.main:app --reload`
