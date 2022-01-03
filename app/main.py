@@ -7,17 +7,18 @@ from app.core.events import create_start_app_handler, create_stop_app_handler
 from app.api.errors.http_error import http_error_handler
 from app.api.errors.validation_error import http422_error_handler
 from app.api.router import getRouter
+from app.core.config import get_app_settings
 
-from loguru import logger
 
 def get_application() -> FastAPI:
-    logger.info("EAR-API")
+    settings = get_app_settings()
+    settings.configure_logging()
 
-    application = FastAPI()
+    application = FastAPI(**settings.fastapi_kwargs)
 
     application.add_middleware(
         CORSMiddleware,
-        allow_origins=["*"],
+        allow_origins=settings.allowed_hosts,
         allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"],
@@ -25,17 +26,19 @@ def get_application() -> FastAPI:
 
     application.add_event_handler(
         "startup",
-        create_start_app_handler(),
+        create_start_app_handler(application, settings),
     )
     application.add_event_handler(
         "shutdown",
-        create_stop_app_handler(),
+        create_stop_app_handler(application),
     )
 
     application.add_exception_handler(HTTPException, http_error_handler)
-    application.add_exception_handler(RequestValidationError, http422_error_handler)
+    application.add_exception_handler(
+        RequestValidationError, http422_error_handler)
 
     application.include_router(getRouter())
     return application
+
 
 app = get_application()
