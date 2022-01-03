@@ -38,6 +38,16 @@ Use Poetry to install the dependencies:
 
 `poetry install`
 
+4. Create the environment configuration file
+
+Create the file named as `.env` with the following content:
+
+```
+APP_ENV=dev
+DEBUG=True
+SECRET_KEY=dev_secret
+```
+
 ## Running the project
 
 Enter the Poetry shell:
