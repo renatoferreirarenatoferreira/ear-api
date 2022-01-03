@@ -30,7 +30,7 @@ def get_application() -> FastAPI:
     )
     application.add_event_handler(
         "shutdown",
-        create_stop_app_handler(application),
+        create_stop_app_handler(application, settings),
     )
 
     application.add_exception_handler(HTTPException, http_error_handler)

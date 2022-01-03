@@ -20,6 +20,8 @@ class AppSettings(BaseAppSettings):
 
     secret_key: SecretStr
 
+    sqlite_file: str = "./db.sqlite3"
+
     api_prefix: str = "/ear-api"
 
     jwt_token_prefix: str = "Token"
